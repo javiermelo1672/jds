@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Proyecto Dinny</string>
+    <string name="title_activity_inicio">Inicio</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="facebook_app_id">322220658285667</string>
+    <string name="fb_login_protocol_scheme">fb322220658285667</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">449e1b8457b2363a761eaf495fef2c9c</string>
+</resources>

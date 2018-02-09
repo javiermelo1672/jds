@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_Inicio"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_Pedidos"
+            android:icon="@drawable/ic_access_time_black_24dp"
+            android:title="Pedidos en Curso" />
+        <item
+            android:id="@+id/nav_Historial"
+            android:icon="@drawable/ic_assignment_black_24dp"
+            android:title="Historial de pedidos" />
+
+    </group>
+
+    <item android:title="Otras Opciones">
+        <menu>
+
+            <item
+                android:id="@+id/nav_Pago"
+                android:icon="@drawable/ic_attach_money_black_24dp"
+                android:title="Pago" />
+            <item
+                android:id="@+id/nav_Soporte"
+                android:icon="@drawable/ic_help_outline_black_24dp"
+                android:title="Soporte" />
+            <item
+                android:id="@+id/nav_Config"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Configuración" />
+        </menu>
+    </item>
+<group >
+    <item android:title="Acerca">
+    <menu>
+
+        <item
+            android:id="@+id/nav_version"
+            android:icon="@drawable/ic_copyright_black_24dp"
+            android:title="Version " />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_close_black_24dp"
+                android:title="Cerrar " />
+
+
+
+    </menu>
+    </item>
+</group>
+
+
+
+</menu>

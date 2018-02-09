@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.javier.proyectodinny.MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/degradado"
+    android:padding="20dp">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:background="@drawable/dinnylog"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:text="Ordena lo que quieras en tu restaurante preferido"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"/>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+
+
+    </LinearLayout>
+</LinearLayout>
+    <LinearLayout
+
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
+
+
+        <Button
+            android:id="@+id/BtnInicio"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/buttonstylesms"
+            android:text="ingresar con Correo"
+            android:textColor="#fff"
+            android:drawableLeft="@drawable/ic_email_black_24dp"/>
+            android:textColor="#fff" />
+        <Button
+            android:id="@+id/BtnFacebook"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/buttonstylefacebook"
+            android:text="Ingresar con Facebook"
+            android:textColor="#fff"
+            android:drawableLeft="@drawable/ic_local_phone_black_24dp"/>
+
+
+        <TextView
+            android:id="@+id/Terminos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
+            android:textColor="#808080"
+            android:textAlignment="center"
+            android:text="Al ingresar aceptas todos los terminos de Dinny" />
+
+        <ProgressBar
+            android:id="@+id/Barradeprogreso"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Iniciando Sesión"
+            android:visibility="invisible"
+            />
+
+    </LinearLayout>
+</LinearLayout>
+
