@@ -125,24 +125,17 @@ public class EscogerFoto extends AppCompatActivity {
 
 private  void setActualizarFotodb(final  String Dinnyphoto )
 {
-//el problema del error
+         //Javier Melo
+         //Problema sin resolver
+    //table user trae referencia de Usuarios
 
-         table_user.addValueEventListener(new ValueEventListener() {
-             @Override
-             public void onDataChange(DataSnapshot dataSnapshot) {
-
-
-                         table_user.child(user.getUid()+"/foto").setValue(Dinnyphoto);
+//actualiza pero borra el dato
+      Map<String, Object> ActualizarMapa = new HashMap<>();
+      ActualizarMapa.put("foto", Dinnyphoto);
+      table_user.child(user.getUid()).updateChildren(ActualizarMapa);
 
 
 
-                 }
-
-             @Override
-             public void onCancelled(DatabaseError databaseError) {
-
-             }
-         });
 
 }
 

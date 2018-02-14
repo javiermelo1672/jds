@@ -28,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.facebook.accountkit.AccountKit;
 import com.facebook.accountkit.AccessToken;
 
+import Get_Data.BasicUser;
 import Get_Data.Uid;
 
 import static com.example.javier.proyectodinny.FacebookSms.APP_REQUEST_CODE;
@@ -184,8 +185,13 @@ public class Registro extends AppCompatActivity {
     private void CrearUsuariodb(String uid,String Nombre,String Telefono)
     {
 
-        User user=new User("0",Nombre,Telefono,"0","0");
-        myRef.child(Uidt).setValue(user);
+       User user=new User("0",Nombre,Telefono,"0","0");
+       myRef.child(Uidt).setValue(user);
+       //FirebaseDatabase database2 = FirebaseDatabase.getInstance();
+        //DatabaseReference usersRef = database.getReference("Usuarios");
+        //usersRef.child("alanisawesome").setValueAsync(new BasicUser("NOmbre","Telefono", "0","0","0"));
+
+
     }
 
     public void phoneLogin(LoginType loginType) {
