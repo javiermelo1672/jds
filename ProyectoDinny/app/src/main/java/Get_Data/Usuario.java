@@ -8,14 +8,16 @@ public class Usuario {
     private String Nombre;
     private String Correo;
     private String Contrasena;
+    private String Foto;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String correo, String contrasena) {
+    public Usuario(String nombre, String correo, String contrasena, String foto) {
         Nombre = nombre;
         Correo = correo;
         Contrasena = contrasena;
+        Foto=foto;
     }
 
     public String getNombre() {
@@ -40,5 +42,13 @@ public class Usuario {
 
     public void setContrasena(String contrasena) {
         Contrasena = contrasena;
+    }
+
+    public String getFoto() {
+        return Foto;
+    }
+
+    public void setFoto(String foto) {
+        Foto = foto;
     }
 }

@@ -27,6 +27,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
 import org.w3c.dom.Text;
 
 public class Inicio extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -45,9 +46,7 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        NombreUsuario=(TextView)findViewById(R.id.NombreUsuario);
-        Correo=(TextView)findViewById(R.id.Correo);
-        Imagenperfil=(ImageView)findViewById(R.id.Imagenperfil);
+
 
         setSupportActionBar(toolbar);
 

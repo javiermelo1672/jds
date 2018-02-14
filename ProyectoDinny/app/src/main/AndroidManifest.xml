@@ -46,7 +46,8 @@
         <activity android:name=".FacebookSms" />
         <activity android:name=".RegistroFacebook" />
         <activity android:name=".EscogerFoto" />
-        <activity android:name=".VisualizarFoto"></activity>
+        <activity android:name=".VisualizarFoto" />
+        <activity android:name=".ProfileSettingss"></activity>
     </application>
 
 </manifest>

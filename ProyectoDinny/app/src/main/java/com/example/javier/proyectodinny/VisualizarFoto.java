@@ -15,6 +15,11 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -27,7 +32,9 @@ public class VisualizarFoto extends AppCompatActivity {
     private StorageReference mStorage;
     private FirebaseStorage mAuthListenerPhoto;
     private String Uid;
-
+    private ValueEventListener tinny ;
+    final FirebaseDatabase referencia= FirebaseDatabase.getInstance();
+    private DatabaseReference table_user= referencia.getReference("Usuarios");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,24 +61,36 @@ public class VisualizarFoto extends AppCompatActivity {
 
     public void MostrarImagen()
     {
+
         Uid=user.getUid();
         Toast.makeText(VisualizarFoto.this,Uid,Toast.LENGTH_SHORT).show();
-        mStorage.child("gs://betaexampledinny-6d5de.appspot.com/"+Uid+"/21").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+
+
+
+        tinny = table_user.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onSuccess(Uri uri) {
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                User user =dataSnapshot.child(Uid).getValue(User.class);
+               String Foto =user.getFoto();
+
+                Glide.with(VisualizarFoto.this).load(Foto).into(ImagenMuestra);
 
 
-                Glide.with(VisualizarFoto.this).load(uri).into(ImagenMuestra);
 
 
             }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
 
-                Toast.makeText(VisualizarFoto.this,"Error al descargar la foto",Toast.LENGTH_SHORT).show();
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(VisualizarFoto.this,"Error ",Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
+
+
     }
     public void onStart(){
         super.onStart();

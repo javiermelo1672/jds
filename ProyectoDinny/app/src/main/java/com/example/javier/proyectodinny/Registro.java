@@ -183,7 +183,8 @@ public class Registro extends AppCompatActivity {
 
     private void CrearUsuariodb(String uid,String Nombre,String Telefono)
     {
-        User user=new User("null",Nombre,Telefono,"0","0");
+
+        User user=new User("0",Nombre,Telefono,"0","0");
         myRef.child(Uidt).setValue(user);
     }
 
@@ -237,9 +238,7 @@ public class Registro extends AppCompatActivity {
     }
 
 
-    private void updatesmsdb(){
 
-    }
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
