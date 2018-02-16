@@ -185,7 +185,7 @@ public class Registro extends AppCompatActivity {
     private void CrearUsuariodb(String uid,String Nombre,String Telefono)
     {
 
-       User user=new User("0",Nombre,Telefono,"0","0");
+       User user=new User("0",Nombre,Telefono,"0",uid);
        myRef.child(Uidt).setValue(user);
        //FirebaseDatabase database2 = FirebaseDatabase.getInstance();
         //DatabaseReference usersRef = database.getReference("Usuarios");

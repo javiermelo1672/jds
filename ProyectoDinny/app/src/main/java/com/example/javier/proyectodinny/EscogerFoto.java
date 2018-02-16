@@ -130,9 +130,32 @@ private  void setActualizarFotodb(final  String Dinnyphoto )
     //table user trae referencia de Usuarios
 
 //actualiza pero borra el dato
-      Map<String, Object> ActualizarMapa = new HashMap<>();
-      ActualizarMapa.put("foto", Dinnyphoto);
-      table_user.child(user.getUid()).updateChildren(ActualizarMapa);
+
+    FirebaseDatabase m_obj=FirebaseDatabase.getInstance();
+
+    final DatabaseReference reference= m_obj.getReference();
+
+    Query query= reference.child("Usuarios/").orderByChild("smsVeri").equalTo(user.getUid());
+
+    query.addListenerForSingleValueEvent(new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            DataSnapshot nodo=dataSnapshot.getChildren().iterator().next();
+            String key=nodo.getKey();
+            String path="/"+dataSnapshot.getKey()+"/"+key;
+            HashMap<String,Object> result =new HashMap<>();
+            result.put("foto",Dinnyphoto);
+            reference.child(path).updateChildren(result).isSuccessful();
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    });
+
+
+
 
 
 
